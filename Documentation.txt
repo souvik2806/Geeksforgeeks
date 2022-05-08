@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+int main()
+{
+ int n,i,k,c=1;
+ printf("Enter your number of rows\n");
+ scanf("%d",&n);//Input to get number of row in each half of the diamond
+ c=n-1;//decrementing the total row by 1
+ for(k=1;k<=n;k++)//loop to print the *
+ {
+     for(i=1;i<=c;i++)
+     printf(" ");
+     c--;
+     for(i=1;i<=2*k-1;i++)
+     printf("*");
+     printf("\n");
+
+ }//till now half of the diamond is printed
+ c=1;//for lower half of diamond c is assigned 1
+ for(k=1;k<=n-1;k++)//loop to lower half of diamond shaped *
+ {
+     for(i=1;i<=c;i++)
+     printf(" ");
+     c++;
+     for(i=1;i<=2*(n-k)-1;i++)
+     printf("*");
+     printf("\n");
+ }
+ return 0;
+
+
+}
+
+Explanation:
+1.Taken number of rows in each half of the diamond in variable n
+2.Decrementing row number by 1 and assigned the value to c
+3.Use loop starting from 1 to (2*k-1) to print '*'
+4.Half of the diamond is printed
+5.For the next half,c is assigned value 1
+6.Used another loop starting from 1 to(2*(n-k)-1) to print '*'
